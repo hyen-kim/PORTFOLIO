@@ -1,0 +1,81 @@
+﻿
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>feedback</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<style>
+
+table{
+	width : 450px;
+	height : 400px
+}
+th {
+	text-align : center;
+}
+#content {
+	width : 450px;
+	height : 300px
+}
+
+</style>
+
+</head>
+<body>
+<div class="container">
+<table class="table table-bordered">
+    <thead>
+        <caption><h1>Feedback</h1> </caption>
+    </thead>
+    <tbody>
+        <form>
+            <tr>
+                <th>제목</th>
+                <td><input type="text" placeholder="제목을 입력하세요. " id ="subject" class="form-control"/></td>
+            </tr>
+            <tr>
+                <th>내용</th>
+                <td><input type = "text" placeholder="내용을 입력하세요. " id="content" class="form-control"></textarea></td>
+            </tr>
+            <tr>
+                <th>비밀번호</th>
+                <td><input type="password" placeholder="비밀번호를 입력하세요" id = "password" class="form-control"/></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="button" value="등록" onclick = "button1_click();" class="pull-right"/>
+                </td>
+            </tr>
+	<tr><th>의견</th>
+	    <td><div id="board"></div></td></tr>
+        </form>
+    </tbody>
+</table>
+</div>
+
+
+<script>
+	function button1_click() {
+	alert("의견이 등록되었습니다.");
+	var input1 = document.getElementById("subject").value;
+	var input2 = document.getElementById("content").value;
+    	document.getElementById("board").innerHTML = input1;
+	document.getElementById("subject").value = null;
+	document.getElementById("content").value = null;	
+	document.getElementById("password").value = null;
+	/*
+		추가하고 싶은부분 ? : 나중에 의견을 클릭하였을 때 내용도 볼 수있도록
+		추가할부분 ? : 새창이 아니라 php 를 이용하여 밑 내용만 바뀌도록 구현
+	*/
+	}
+
+	
+</script>
+
+
+</body>
+
+
+</html>

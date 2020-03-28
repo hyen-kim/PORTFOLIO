@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>회원가입 폼 _KHN</title>
+
+<style type="text/css">
+
+	body{	/* body 전체 부분 */
+			background-color: #BDBDBD;	/* 바탕화면 색상 : 스카이블루 */
+			font-family: Arial Black;	/* 글꼴 종류 */
+	}
+	
+	form{ /* 테이블 전체 설정 */
+			background-color: white;			/* 배경 색상 */
+			padding: 50px 0;					/* 여백 설정 : 상 우 하 좌 */
+			border-radius: 10px; 				/* 모서리가 둥근 사각형 */
+			box-shadow: 4px +3px 15px #4B4B4B; 	/* 그림자  */
+	}
+	
+	
+	.style{
+			color: #5D5D5D;
+	}
+	
+	
+	.join1{		/* 회원가입 */
+			text-shadow: 2px 4px 2px #666;	/* 글자 그림자 */
+			text-align: center;				/* 가운데 정렬*/
+			color: white;					/* 글꼴 색상 */
+			font-style: italic;				/* 글꼴 기울기 */
+	}
+	
+	
+	.button1{	/* 회원가입 버튼 */
+			width: 100px;
+			background-color: white;
+			border-style: none; 	/*테두리 : 선의 스타일*/
+			border-radius: 10px;
+			color: #BDBDBD;
+			box-shadow: 4px +3px 15px #4B4B4B; /* 그림자  */
+			text-shadow: 0px 1px #666;			/* 글자 그림자 */
+	}
+	
+	
+	.button2{	/* 취소 버튼 */
+			background-color: white;
+			border-style: none; 				/*테두리 : 선의 스타일*/
+			border-radius: 10px;				/* 모서리가 둥근 직사각형 */
+			color: #BDBDBD;						/* 글자 색깔 */
+			box-shadow: 4px +3px 15px #4B4B4B; 	/* 그림자  */
+			text-shadow: 0px 1px #666;			/* 글자 그림자 */
+	}
+</style>
+
+
+
+
+
+</head>
+<body>
+
+	<br><h2 class="join1"> 회원가입 <font color="#353535" size="2"> | JOIN </font></h2> 
+	<br><br>
+
+	<form>
+		<table class="frm1" border="1" align="center" cellspacing="0" width="650">
+			<tr>
+				<th>아이디 <font color="red">*</font></th>
+				<td>&nbsp;&nbsp;<input type="text" name="id"><br>
+				<font size="1" class="style">&nbsp;> ID는 3~20자 사이의 영문+숫자로 이루어져야 하며 영문으로 시작 되어야합니다.</font></td>
+			</tr>
+			
+			
+			<tr>
+				<th>비밀번호 <font color="red">*</font></th>
+				<td>&nbsp;&nbsp;<input type="password" name="pw1"><br>
+					<font size="1" class="style">&nbsp;> 비밀번호는 6~20자로 되어야합니다.</font></td>
+			</tr>
+
+
+			<tr>
+				<th>비밀번호 확인 <font color="red">*</font></th>
+				<td>&nbsp;&nbsp;<input type="password" name="pw2"><br>
+				<font size="1" class="style">&nbsp;> 보안상 확인을 위해 한 번더 입력해주세요.</font></td>
+			</tr>
+			
+			
+			<tr>
+				<th>이름 <font color="red">*</font>
+				<td>&nbsp;&nbsp;<input type="text" name="name1"><br>
+				<font size="1" class="style">&nbsp;> 이름은 2~20자 이내로 되어야합니다.</font></td>
+				</tr>
+			
+			
+			
+			<tr>
+				<th>상호(법인명) <font color="red">*</font>
+				<td>&nbsp;&nbsp;<input type="text" name="name2"><br>
+					<font size="1" class="style">&nbsp;> 상호(법인명)은 2~20자 이내여야 합니다. 개인일 경우 이름 혹은 닉네임을 입력합니다. </font></td>
+			</tr>
+			
+		</table>
+
+		<br>
+
+		<table class="frm1" border="1" align="center" cellspacing="0" width="650">
+			<tr>
+				<th>이메일 주소 <font color="red">*</font></th>
+				<td>&nbsp;&nbsp;<input type="text" name="email"><br>
+				<font size="1" class="style">&nbsp;> 메일주소는 메일인증 후 비밀번호 변경이나 찾기 등에 사용됩니다.</font></td>
+			</tr>
+
+
+			<tr>
+				<th>핸드폰번호 <font color="red">*</font></th>
+				<td>&nbsp;&nbsp;<font size="2">대한민국(+82)</font>
+				<input type="text" name="ph1" size="10"> <input type="text" name="ph2" size="10"> 
+				<input type="text" name="ph3" size="10">
+				<input type="button" name="button" onClick="phe()" value="인증"><br>
+				<font size="1" class="style">&nbsp;> 서비스 관련 중요시안에 대한 알림을 목적으로 사용됩니다.</font></td>
+			</tr>
+
+			<tr>
+				<th>인증번호 <font color="red">*</font></th>
+				<td>&nbsp;&nbsp;<input type="text" name="ph4"><br>
+				<font size="1" class="style">&nbsp;> 핸드폰인증을 받으시면 자동으로 채워집니다. 위의 인증 버튼을 클릭하세요.</font></td>
+			</tr>
+
+
+			<tr>
+				<th>생일 <font color="red">*</font></th>
+				<td>&nbsp;&nbsp;<input type="month" name="happy1"> <select>
+						<option value="">일</option>
+						<option value="01">01</option> <option value="02">02</option>
+						<option value="03">03</option> <option value="04">04</option> 
+						<option value="05">05</option> <option value="06">06</option>
+						<option value="07">07</option> <option value="08">08</option>
+						<option value="09">09</option> <option value="10">10</option>
+						<option value="11">11</option> <option value="12">12</option>
+						<option value="12">13</option> <option value="12">14</option>
+						<option value="12">15</option> <option value="12">16</option>
+						<option value="12">17</option> <option value="12">18</option>
+						<option value="12">19</option> <option value="12">20</option>
+						<option value="12">21</option> <option value="12">22</option>
+						<option value="12">23</option> <option value="12">24</option>
+						<option value="12">25</option> <option value="12">26</option>
+						<option value="12">27</option> <option value="12">28</option>
+						<option value="12">29</option> <option value="12">30</option>
+						<option value="12">31</option>
+				</select> <br><font size="1" class="style">&nbsp;> 생년월일을 입력해주세요.</font></td>
+			</tr>
+
+			<tr>
+				<th>가입경로 <font color="red">*</font>
+				<td>&nbsp;&nbsp;<input type="checkbox" name="where1">친구소개 
+				<input type="checkbox" name="where2">검색엔진 
+				<input type="checkbox" name="where3">신문광고
+				<input type="checkbox" name="where4">커뮤니티 사이트
+				<input type="checkbox" name="where5">기타<br> 
+				<font size="1" class="style">&nbsp;> 가입하게 된 경로를 선택해주세요.</font></td>
+			</tr>
+
+			<tr>
+				<th>메일수신 <font color="red">*</font></th>
+				<td>&nbsp;&nbsp;<input type="checkbox" name="where1"><br>
+				<font size="1" class="style">&nbsp;> 체크시 이벤트 메일이 메일 발송합니다.</font></td>
+			</tr>
+		</table>
+	</form>
+
+		<br>
+		<span style = "float:right;"> <input type="button" class="button1" value="회원가입">
+		<input type="reset" class="button2" value="취소"></span>
+</body>
+</html>
