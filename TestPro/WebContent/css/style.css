@@ -4,7 +4,7 @@
 
 /* div 태그 관련 디자인 */
 .container {
-	width: 850px;				/*index.html 문서 전체 폭 설정 */
+	width: 950px;				/*index.html 문서 전체 폭 설정 */
 	margin: 0 auto; 			/* 바깥쪽 여백 ( 0: 위아래 / auto: 자동으로 선택) */
 	/*전체의 픽셀중 가로를 950px 으로 잡고 
 	나머지 여백(공간)을 자동으로 가운데로 모이게 해주겠다 라는 의미.*/
