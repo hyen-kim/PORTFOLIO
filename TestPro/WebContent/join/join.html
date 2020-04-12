@@ -15,53 +15,84 @@
 	function Id_Confirm() {
 		if (!(join.id.value)) {
 			// null 값이 입력되었을 경우 
-			alert("아이디 값을 입력해주세요.");
+			document.getElementById('id_check').innerHTML = "<font color='red'>> 아이디 값을 다시 입력하여주세요.</font>";
 			join.id.focus();
+			return false;
 		} else if(join.id.value == "201907033"){	
 			// 나중에는 우리 학생 전체 학번을 값으로 유효성 검사를 하는 것이 나의 목표. 지금은 나의 학번으로 만
-			alert("중복되는 아이디 입니다.");
+			document.getElementById('id_check').innerHTML = "<font color='red'>> 아이디 값을 다시 입력하여주세요.</font>";
 			join.id.focus();
 			join.id.value="";
+			return false;
 		}else {
-			alert("사용가능한 아이디 입니다.");
+			document.getElementById('id_check').innerHTML = "<font color='green'>> 아이디가 확인되었습니다.</font>";
+			document.getElementById('id_check').value = true;
+			return true;
 		}
 	}
 
 
 	// 비밀번호 확인하는 함수
-	function Password_Confirm() {
+	function Pw_Confirm() {
 		if (!(join.pw1.value)) {
 			// null 값이 입력되었을 경우 
-			alert("비밀번호 값을 입력해주세요.");
+			document.getElementById('pw_check').innerHTML = "<font color='red'>> 비밀번호 값을 입력하여주세요.</font>";
 			join.pw1.focus();
+			return false;
 		} else if (!(join.pw2.value)) {
 			// null 값이 입력되었을 경우 
-			alert("비밀번호 확인 값을 입력해주세요.");
+			document.getElementById('pw_check').innerHTML = "<font color='red'>> 비밀번호 확인 값을 입력하여주세요.</font>";
 			join.pw2.focus();
+			return false;
 		} else if (join.pw1.value != join.pw2.value) {
-			alert("비밀번호가 다릅니다. 다시 확인해 주세요.");
+			document.getElementById('pw_check').innerHTML = "<font color='red'>> 비밀번호 값을 다시 입력하여주세요.</font>";
 			join.pw1.value = "";
 			join.pw2.value = "";
 			join.pw1.focus();
+			return false;
 		} else {
-			alert("회원가입이 완료되었습니다.");
+			document.getElementById('pw_check').innerHTML = "<font color='green'>> 비밀번호가 확인되었습니다.</font>";
+			document.getElementById('pw_check').value = true;
+			return true;
 		}
 	}
 	
 	// 핸드폰 인증 클릭시 실행되는 함수
 	function phe(){
-		if((join.ph1.value="") && (join.ph2.value="") && (join.ph3.value="")){	// 빈값이 아닐경우 일단 인증완료
-			alert("인증완료");
-			join.ph4.value = Math.floor(Math.random() * 201907033) + 1;	// 랜덤으로 1~201907003을 넣음
-		}else{
-			alert("핸드폰 번호를 다시 입력해주세요.");
+		if(!(join.ph1.value) || !(join.ph2.value) || !(join.ph3.value)){	// 값이 없을경우
+			document.getElementById('phe_check').innerHTML = "<font color='red'>> 핸드폰 번호를 다시 입력해주세요.</font>";
+			document.getElementById('phe_check_test').innerHTML = "<font color='red'>> 인증실패</font>";
 			join.ph1.value = "";
 			join.ph2.value = "";
 			join.ph3.value = "";
+			join.ph4.value = "";
 			join.ph1.focus();
+			return false;
+		}else{
+			document.getElementById('phe_check').innerHTML = "";
+			document.getElementById('phe_check_test').innerHTML = "<font color='green'>> 인증완료</font>";
+			document.getElementById('phe_check_test').value = true;
+			join.ph4.value = Math.floor(Math.random() * 201907033) + 1;	// 랜덤으로 1~201907003을 넣음
+			return true;
 		}
 	}
 	
+	// 회원가입을 확인하는 함수
+	function Join_Test(phe){
+		var id =document.getElementById('id_check').value;
+		var pw =document.getElementById('pw_check').value;
+		var phe =document.getElementById('phe_check_test').value;
+		if (id && pw && phe){
+			alert("회원가입 성공하셨습니다.");
+		}else{
+			alert("회원가입 실패하셨습니다.");
+		}
+	}
+	
+	function Join_reset(){
+	    join.reset();
+	    return true;
+	}
 	
 </script>
 
@@ -78,21 +109,21 @@
 				<th>아이디 <font color="red">*</font></th>
 				<td><input type="text" name="id"> 
 				<input type="button" class="button3" onClick="Id_Confirm()" value="중복확인">
-				<br> <font size="1" class="style">&nbsp;> ID는 3~20자 사이의 영문+숫자로 이루어져야 하며
-						영문으로 시작 되어야합니다.</font></td>
+				<br> <font size="1" class="style" id= "id_check" >&nbsp;> ID를 입력 후 중복확인을 눌러주세요.</font></td>
 			</tr>
 			<tr>
 				<th>비밀번호 <font color="red">*</font></th>
-				<td><input type="password" name="pw1"><br> <font
-					size="1" class="style">&nbsp;> 비밀번호는 6~20자로 되어야합니다.</font></td>
+				<td><input type="password" name="pw1"><br><br></td>
 			</tr>
 			<tr>
 				<th>비밀번호 확인 <font color="red">*</font></th>
-				<td><input type="password" name="pw2"><br> <font
-					size="1" class="style">&nbsp;> 보안상 확인을 위해 한 번더 입력해주세요.</font></td>
+				<td><input type="password" name="pw2">
+				<input type="button" class="button3" onClick="Pw_Confirm()" value="비밀번호 확인">
+				<br> <font
+					size="1" class="style" id ="pw_check">&nbsp;> 보안상 확인을 위해 한 번더 입력해주세요.</font></td>
 			</tr>
 			<tr>
-				<th>이름 <font color="red">*</font>
+				<th>이름 
 				<td><input type="text" name="name1"><br> <font
 					size="1" class="style">&nbsp;> 이름은 2~20자 이내로 되어야합니다.</font></td>
 			</tr>
@@ -102,20 +133,11 @@
 					<input type="radio" name="gender" value="man">남자 <br>
 					<font size="1" class="style">&nbsp;> 기본적으로 여자가 선택되어있습니다.</font></td>
 			</tr>
+			
 			<tr>
-				<th>상호(법인명) <font color="red">*</font>
-				<td><input type="text" name="name2"><br> <font
-					size="1" class="style">&nbsp;> 상호(법인명)은 2~20자 이내여야합니다. 개인일
-						경우 이름 혹은 닉네임을 입력합니다. </font></td>
-			</tr>
-	
-		<br>
-
-			<tr>
-				<th>이메일 <font color="red">*</font></th>
-				<td><input type="text" name="email"><br> <font
-					size="1" class="style">&nbsp;> 메일주소는 메일인증 후 비밀번호 변경이나 찾기 등에
-						사용됩니다.</font></td>
+				<th>이메일 </th>
+				<td><input type="text" name="email"> @ yuhan.ac.kr<br> <font
+					size="1" class="style">&nbsp;> 메일주소는 기본적으로 유한으로 설정됩니다.</font></td>
 			</tr>
 			<tr>
 				<th>핸드폰번호 <font color="red">*</font></th>
@@ -124,17 +146,18 @@
 				<input type="text" name="ph2" size="10"> 
 				<input type="text" name="ph3" size="10">
 				<input type="button" class="button3" onClick="phe()" value="인증"><br>
-					<font size="1" class="style">&nbsp;> 서비스 관련 중요시안에 대한 알림을 목적으로 사용됩니다.</font></td>
+					<font size="1" class="style" id="phe_check">&nbsp;> 서비스 관련 중요시안에 대한 알림을 목적으로 사용됩니다.</font></td>
 			</tr>
 			<tr>
 				<th>인증번호 <font color="red">*</font></th>
 				<td><input type="text" name="ph4"><br> 
-				<font size="1" class="style">&nbsp;> 핸드폰 인증을 받으시면 자동으로 채워집니다. 
+				<font size="1" class="style" id ="phe_check_test">&nbsp;> 핸드폰 인증을 받으시면 자동으로 채워집니다. 
 						버튼을 클릭하세요.</font></td>
 			</tr>
 			<tr>
-				<th>생일 <font color="red">*</font></th>
-				<td><input type="month" name="happy1"> <select>
+				<th>생일 </th>
+				<td><input type="month" name="happy1"> 
+				<select name =days >
 						<option value="">일</option>
 						<option value="01">01</option>
 						<option value="02">02</option>
@@ -166,8 +189,8 @@
 						<option value="12">28</option>
 						<option value="12">29</option>
 						<option value="12">30</option>
-						<option value="12">31</option>
-				</select> <br> <font size="1" class="style">&nbsp;> 생년월일을 입력해주세요.</font></td>
+						<option value="12">31</option> 
+						</select><br> <font size="1" class="style">&nbsp;> 생년월일을 입력해주세요.</font></td>
 			</tr>
 			<tr>
 				<th>가입경로
@@ -184,16 +207,17 @@
 					size="1" class="style">&nbsp;> 체크시 이벤트 메일이 메일 발송합니다.</font></td>
 			</tr>
 			<tr>
-				<th>하고싶은말</th>
+				<th>가입동기</th>
 				<td><textarea name="say" rows="7" cols="60"></textarea><br></td>
 			</tr>
 		</table>
 	</form>
 	<br>
-	<span style="float: right;"> <input type="submit"
-		class="button1" value="회원가입" onclick="Password_Confirm();"> <input
-		type="button" class="button2" value="취소"
-		onClick="window.open('','_self').close();"></span>
+	<span style="float: right;"> 
+	<input type="submit" class="button1" value="회원가입" onclick= "Join_Test();"> 
+		<input type="reset" class="button2" value="취소" onclick= "Join_reset();"></span>
+		<!-- <input type="button" class="button2" value="취소"
+		onClick="window.open('','_self').close();">  -->
 	<br>
 </body>
 </html>

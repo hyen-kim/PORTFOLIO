@@ -6,10 +6,8 @@ body { /* body 전체 부분 */
 }
 
 form { /* 테이블 전체 설정 */
-	width : 800px;
 	background-color: white; /* 배경 색상 */
 	padding: 50px 0; /* 여백 설정 : 상 우 하 좌 */
-	margin-left : 17%;
 	border-radius: 10px; /* 모서리가 둥근 사각형 */
 	box-shadow: 4px +3px 15px #4B4B4B; /* 그림자  */
 	text-align: left;	/* form 안의 텍스트를 왼쪽 정렬 */
