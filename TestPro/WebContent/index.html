@@ -13,7 +13,6 @@
 		// window.open 			: 새로운 창을 띄운다.
 		// ./login/login.html 	: login 폴더에 있는 login.html이라는 말이다.
 	}
-	
 	/* 내가 만든 회원가입폼 디자인 창 */
 	function join_window() {
 		window.open("./join/join.html", "회원가입", "width=800, height=900");
@@ -25,51 +24,64 @@
 <body>
 
 	<div class="container">
-	  <header> <!-- 머릿말 영역 -->
-	  
-	    <div id="login">
-	      <a href="#" onclick="login_window()">로그인</a>
-	      <a href="#" onclick="join_window()">회원가입</a>
-	    </div> <!-- id="login" end -->
-	    
-	    <hgroup> <!-- 제목과 부제목을 그룹으로 묶어주는 역할을 하는 태그  -->
-		    <h1>Portfolio</h1>	<!-- 제목  -->
-		    <h2>Yuhan University student, 2nd grade</h2>	<!-- 부제목  -->
-	    </hgroup>
-	    
-	    
-	  </header>
-		
-		<nav class="nav">	<!-- 네비게이션의 영역 -->
-			<ul>	<!-- 순서가 없는 목록 -->
-				<li> <a href="#" onClick="location.reload();">Home</a></li>
-				<li> <a href="">study</a></li>
-				<li> <a href="./Feedback/Feedback.html">Feedback</a></li>
-				<li> <a href="">Test</a></li>
+		<header>
+			<!-- 머릿말 영역 -->
+
+			<div id="login">
+				<a href="#" onclick="login_window()">로그인</a> <a href="#"
+					onclick="join_window()">회원가입</a>
+			</div>
+			<!-- id="login" end -->
+
+			<hgroup>
+				<!-- 제목과 부제목을 그룹으로 묶어주는 역할을 하는 태그  -->
+				<h1>Portfolio</h1>
+				<!-- 제목  -->
+				<h2>Yuhan University student, 2nd grade</h2>
+				<!-- 부제목  -->
+			</hgroup>
+
+
+		</header>
+
+		<nav class="nav">
+			<!-- 네비게이션의 영역 -->
+			<ul>
+				<!-- 순서가 없는 목록 -->
+				<li><a href="#" onClick="location.reload();">Home</a></li>
+				<li><a href="">study</a></li>
+				<li><a href="./Feedback/Feedback.html">Feedback</a></li>
+				<li><a href="">Test</a></li>
 			</ul>
-		</nav>	<!-- class="nav" end -->
-		
-		<section class="content"> <!-- 문서의 절 : 여러 개 사용  -->
-			<h2>포트폴리오 소개</h2>	<!-- 절의 제목  -->
-			
+		</nav>
+		<!-- class="nav" end -->
+
+		<section class="content">
+			<!-- 문서의 절 : 여러 개 사용  -->
+			<h2>포트폴리오 소개</h2>
+			<!-- 절의 제목  -->
+
 			<!-- 문서의 본문  -->
 			<article>
 				<h3>TEST</h3>
 				<p>초기 디자인 테스트</p>
 			</article>
 		</section>
-		
-		<aside class="sidebar"> <!-- 문서의 보조내용 -->
+
+		<aside class="sidebar">
+			<!-- 문서의 보조내용 -->
 			<h3 align="center">TEST</h3>
 			<p>초기 디자인 테스트용</p>
 		</aside>
-		
-		<footer>	<!-- 꼬릿말 태그 : 하단 태그 -->
+
+		<footer>
+			<!-- 꼬릿말 태그 : 하단 태그 -->
 			<p>School : Yuhan University</p>
-			<p>Department : IT Soft Ware </p>
+			<p>Department : IT Soft Ware</p>
 		</footer>
-		
-	</div> <!-- class="container" end -->
+
+	</div>
+	<!-- class="container" end -->
 
 
 </body>
