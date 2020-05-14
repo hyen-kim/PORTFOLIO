@@ -6,8 +6,7 @@
 <title>Yuhan Join</title>
 
 <!-- 내가 준 .css -->
-<link rel="stylesheet" type="text/css" href="../css/joinstyle.css">
-
+<link rel="stylesheet" type="text/css" href="joinstyle.css">
 <!-- 회원가입폼 유효성 검사  -->
 <script type="text/javascript">
 
@@ -95,19 +94,15 @@
 	}
 	
 </script>
-
-
 </head>
 <body>
-	<h2 class="join1">
-		회원가입 <font color="#353535" size="2"> | JOIN </font><br>
-	</h2>
+	<h2 class="join1"> 회원가입 <font color="#353535" size="2"> | JOIN </font><br></h2>
 	<!-- form 의 기본형식 -->
-	<form name="join">
+	<form name="join" method="post">
 		<table class="frm1" border="1" align="center" cellspacing="0" width="650">
 			<tr>
 				<th>아이디 <font color="red">*</font></th>
-				<td><input type="text" name="id"> 
+				<td><input type="text" name="id">
 				<input type="button" class="button3" onClick="Id_Confirm()" value="중복확인">
 				<br> <font size="1" class="style" id= "id_check" >&nbsp;> ID를 입력 후 중복확인을 눌러주세요.</font></td>
 			</tr>
@@ -123,7 +118,7 @@
 					size="1" class="style" id ="pw_check">&nbsp;> 보안상 확인을 위해 한 번더 입력해주세요.</font></td>
 			</tr>
 			<tr>
-				<th>이름 
+				<th>이름</th>
 				<td><input type="text" name="name1"><br> <font
 					size="1" class="style">&nbsp;> 이름은 2~20자 이내로 되어야합니다.</font></td>
 			</tr>
@@ -133,7 +128,7 @@
 					<input type="radio" name="gender" value="man">남자 <br>
 					<font size="1" class="style">&nbsp;> 기본적으로 여자가 선택되어있습니다.</font></td>
 			</tr>
-			
+
 			<tr>
 				<th>이메일 </th>
 				<td><input type="text" name="email"> @ yuhan.ac.kr<br> <font
@@ -141,70 +136,43 @@
 			</tr>
 			<tr>
 				<th>핸드폰번호 <font color="red">*</font></th>
-				<td><font size="2">대한민국(+82)</font> 
-				<input type="text" name="ph1" size="10"> 
-				<input type="text" name="ph2" size="10"> 
+				<td><font size="2">대한민국(+82)</font>
+				<input type="text" name="ph1" size="10">
+				<input type="text" name="ph2" size="10">
 				<input type="text" name="ph3" size="10">
 				<input type="button" class="button3" onClick="phe()" value="인증"><br>
 					<font size="1" class="style" id="phe_check">&nbsp;> 서비스 관련 중요시안에 대한 알림을 목적으로 사용됩니다.</font></td>
 			</tr>
 			<tr>
 				<th>인증번호 <font color="red">*</font></th>
-				<td><input type="text" name="ph4"><br> 
-				<font size="1" class="style" id ="phe_check_test">&nbsp;> 핸드폰 인증을 받으시면 자동으로 채워집니다. 
+				<td><input type="text" name="ph4"><br>
+				<font size="1" class="style" id ="phe_check_test">&nbsp;> 핸드폰 인증을 받으시면 자동으로 채워집니다.
 						버튼을 클릭하세요.</font></td>
 			</tr>
 			<tr>
 				<th>생일 </th>
-				<td><input type="month" name="happy1"> 
+				<td><input type="month" name="happy1">
 				<select name =days >
 						<option value="">일</option>
-						<option value="01">01</option>
-						<option value="02">02</option>
-						<option value="03">03</option>
-						<option value="04">04</option>
-						<option value="05">05</option>
-						<option value="06">06</option>
-						<option value="07">07</option>
-						<option value="08">08</option>
-						<option value="09">09</option>
-						<option value="10">10</option>
-						<option value="11">11</option>
-						<option value="12">12</option>
-						<option value="12">13</option>
-						<option value="12">14</option>
-						<option value="12">15</option>
-						<option value="12">16</option>
-						<option value="12">17</option>
-						<option value="12">18</option>
-						<option value="12">19</option>
-						<option value="12">20</option>
-						<option value="12">21</option>
-						<option value="12">22</option>
-						<option value="12">23</option>
-						<option value="12">24</option>
-						<option value="12">25</option>
-						<option value="12">26</option>
-						<option value="12">27</option>
-						<option value="12">28</option>
-						<option value="12">29</option>
-						<option value="12">30</option>
-						<option value="12">31</option> 
+          <?php
+          for ($i=1; $i <= 31 ; $i++) {  echo "<option value=$i>$i</option>"; }
+            ?>
 						</select><br> <font size="1" class="style">&nbsp;> 생년월일을 입력해주세요.</font></td>
 			</tr>
 			<tr>
-				<th>가입경로
-				<td><input type="checkbox" name="where1">친구소개 
-				<input type="checkbox" name="where2">검색엔진 
-				<input type="checkbox" name="where3">신문광고 
-				<input type="checkbox" name="where4">커뮤니티 사이트 
-				<input type="checkbox" name="where5">기타<br> 
+				<th>가입경로</th>
+				<td><input type="checkbox" name="where1">친구소개
+				<input type="checkbox" name="where2">검색엔진
+				<input type="checkbox" name="where3">신문광고
+				<input type="checkbox" name="where4">커뮤니티 사이트
+				<input type="checkbox" name="where5">기타<br>
 				<font size="1" class="style">&nbsp;> 가입하게 된 경로는 중복선택이 가능합니다.</font></td>
 			</tr>
 			<tr>
-				<th>메일수신</th>
-				<td><input type="checkbox" name="mail"><br> <font
-					size="1" class="style">&nbsp;> 체크시 이벤트 메일이 메일 발송합니다.</font></td>
+				<th>메일수신 </th>
+				<td><input type="radio" name="mailcheck" value="yes" checked="checked">예
+					<input type="radio" name="mailcheck" value="no">아니요<br>
+					</td>
 			</tr>
 			<tr>
 				<th>가입동기</th>
@@ -213,8 +181,8 @@
 		</table>
 	</form>
 	<br>
-	<span style="float: right;"> 
-	<input type="submit" class="button1" value="회원가입" onclick= "Join_Test();"> 
+	<span style="float: right;">
+	<input type="submit" class="button1" value="회원가입" onclick= "Join_Test();">
 		<input type="reset" class="button2" value="취소" onclick= "Join_reset();"></span>
 		<!-- <input type="button" class="button2" value="취소"
 		onClick="window.open('','_self').close();">  -->
