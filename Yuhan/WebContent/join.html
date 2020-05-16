@@ -84,12 +84,25 @@
 				</td>
 			</tr>
 			
+			<!-- 통신사 : radio -->
+			<tr>
+				<th height="50px">통신사</th>
+				<td><input type="radio" name="photype" value="SKT" checked="checked">SKT
+				<input type="radio" name="photype" value="KT">KT
+				<input type="radio" name="photype" value="LGU+">LGU+
+				</td>
+			</tr>
 
-			<!-- 핸드폰 번호  -->
+			<!-- 핸드폰 번호 : select 1개 -->
 			<tr>
 				<th height="50px">핸드폰번호 <font color="red">*</font></th>
 				<td><font size="2">대한민국(+82)</font> 
-				<input type="text" name="ph1" size="10"> - 
+				<select name="ph1">
+						<option value= "010" >010</option>
+						<option value= "002" >002</option>
+						<option value= "033" >033</option>
+						<option value= "031" >031</option>
+				</select> - 
 				<input type="text" name="ph2" size="10"> - 
 				<input type="text" name="ph3" size="10">
 				<input type="button" class="button3" onClick="phe()" value="인증"><br>
@@ -107,10 +120,11 @@
 			</tr>
 
 
-			<!-- 생일 : select -->
+			<!-- 생일 : select 3개 -->
 			<tr>
 				<th height="50px">생년월일</th>
-				<td><select name="year">
+				<td>
+				<select name="year">
 						<?php
 							for($i=1920;$i<=2019;$i++) 
 							{ echo "<option value=\"$i\">$i</option>\n"; } ?>
@@ -141,6 +155,16 @@
 				<font size="1" class="style">&nbsp;> 가입하게 된 경로는 중복선택이 가능합니다.</font></td>
 			</tr>
 			
+			<!-- 관심분야 : checkbox -->
+			<tr>
+				<th height="50px">관심분야</th>
+				<td><input type="checkbox" name="0">C++
+				<input type="checkbox" name="1">Java 
+				<input type="checkbox" name="2">Python
+				<input type="checkbox" name="3">Linux 
+				<input type="checkbox" name="4">없음<br> </td>
+			</tr>
+			
 			
 			<!-- 이메일 -->
 			<tr>
@@ -156,15 +180,16 @@
 				<input type="radio" name="mailcheck" value="no">아니요<br></td>
 			</tr>
 
-			<!-- 가입 동기  : textrea-->
+			<!-- 가입 동기  : textarea-->
 			<tr>
 				<th height="50px">가입동기</th>
 				<td><textarea name="say" rows="7" cols="60"></textarea><br></td>
 			</tr>
+			
 		</table>	
 	<br>
 	<span style="float: right;"> 
-	<input type="submit"class="button1" value="회원가입" onclick="Join_Test();"> 
+	<input type="submit"class="button1" value="회원가입"> 
 	<input type="reset" class="button2" value="취소" onclick="Join_reset();"></span>
 		
 	</form>

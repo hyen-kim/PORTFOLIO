@@ -38,7 +38,7 @@
 
   // 가입경로
   for ($i=0; $i <= 4 ; $i++) {
-    if ($where.(i+1)) {
+    if ($where.($i+1)) {
     	if ($wheres=="")	$wheres = $wheres_array[i];
     	else $wheres = $wheres." ,".$wheres_array[i];
     }
