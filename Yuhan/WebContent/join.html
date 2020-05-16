@@ -23,11 +23,10 @@
 
 <body>
 	<h2 class="join1">
-		회원가입 <font color="#353535" size="2"> | JOIN </font><br>
-	</h2>
+		회원가입 <font color="#353535" size="2"> | JOIN </font><br></h2>
 	<!-- form 의 기본형식 -->
-	<form name="join" method="post">
-		<table class="jointable" border="1" align="center" cellspacing="0" width="650" action="join.php">
+	<form name="join" method="post" action="join.php">
+		<table class="jointable" border="1" align="center" cellspacing="0" width="650">
 			
 			<!-- 아이디  -->
 			<tr>
@@ -162,14 +161,14 @@
 				<th height="50px">가입동기</th>
 				<td><textarea name="say" rows="7" cols="60"></textarea><br></td>
 			</tr>
-			
-			
-		</table>
-	</form>
+		</table>	
 	<br>
 	<span style="float: right;"> 
 	<input type="submit"class="button1" value="회원가입" onclick="Join_Test();"> 
 	<input type="reset" class="button2" value="취소" onclick="Join_reset();"></span>
+		
+	</form>
+	
 	<br>
 </body>
 </html>
