@@ -49,6 +49,30 @@
 				<input type="button" class="button3" value="비밀번호 확인"> <br> 
 				<font size="1" class="style">&nbsp;> 보안상 확인을 위해 한 번더 입력해주세요.</font></td>
 			</tr>
+			
+			
+			<!-- 비밀번호 힌트 -->
+			<tr>
+		         <th height="50px">비밀번호 힌트</th>
+		         <td><select name='pwhint'>
+		         <option value='0'>선택하세요</option>
+		         <option value='1'>졸업한 초등학교 이름은?</option>
+		         <option value='2'>아버지 성함은?</option>
+		         <option value='3'>어머니 성함은?</option>
+		         <option value='4'>어릴 적 내 별명은?</option>
+		         <option value='5'>좋아하는 동물은?</option>
+		         <option value='6'>좋아하는 색깔은?</option>
+
+		        </select>
+       	 </tr>
+       	 
+       	 
+       	 <!-- 비밀번호 답변 -->
+        <tr>
+           <th height="50px">답변</th>
+           <td><input type='text' name='pwhintans'></td>
+        </tr>
+
 
 			<!-- 이름 -->
 			<tr>
@@ -93,7 +117,7 @@
 				</td>
 			</tr>
 
-			<!-- 핸드폰 번호 : select 1개 -->
+			<!-- 핸드폰 번호 : select -->
 			<tr>
 				<th height="50px">핸드폰번호 <font color="red">*</font></th>
 				<td><font size="2">대한민국(+82)</font> 
@@ -120,7 +144,7 @@
 			</tr>
 
 
-			<!-- 생일 : select 3개 -->
+			<!-- 생일 : select -->
 			<tr>
 				<th height="50px">생년월일</th>
 				<td>
@@ -158,11 +182,11 @@
 			<!-- 관심분야 : checkbox -->
 			<tr>
 				<th height="50px">관심분야</th>
-				<td><input type="checkbox" name="0">C++
-				<input type="checkbox" name="1">Java 
-				<input type="checkbox" name="2">Python
-				<input type="checkbox" name="3">Linux 
-				<input type="checkbox" name="4">없음<br> </td>
+				<td><input type="checkbox" name="interest0">C++
+				<input type="checkbox" name="interest1">Java 
+				<input type="checkbox" name="interest2">Python
+				<input type="checkbox" name="interest3">Linux 
+				<input type="checkbox" name="interest4">없음<br> </td>
 			</tr>
 			
 			

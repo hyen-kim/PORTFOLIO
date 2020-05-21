@@ -1,6 +1,10 @@
 <?php
-  // 가입경로를 담아놓을 배열
-  $wheres_array = Array("친구소개","검색엔진","신문광고","커뮤니티 사이트", "기타");
+  // 비밀번호 힌트
+  $pwhint_array = Array("입력하지않음","졸업한 초등학교 이름은?","아버지 성함은?","어머니 성함은?", "어릴 적 내 별명은?", "좋아하는 동물은?", "좋아하는 색깔은?");
+
+  // 관심분야
+  $interests = "";
+
   $wheres = ""; // 가입경로를 담아야하므로 초기화
 
   // 성별
@@ -32,20 +36,57 @@
   $phocheck = $ph4 == "" ? "인증실패" : "인증완료" ;
   // 생년월일 저장
   $birthday = $year."년 ".$month."월 ".$days."일";
+
   // 메일 수신 여부
   $mail = $mailcheck == "yes"  ? "동의" : "비동의";
 
 
   // 가입경로
-  for ($i=0; $i <= 4 ; $i++) {
-    if ($where.($i+1)) {
-    	if ($wheres=="")	$wheres = $wheres_array[i];
-    	else $wheres = $wheres." ,".$wheres_array[i];
-    }
+  if($where1) {
+  	if($wheres=="")	$wheres = "친구소개";
+  	else 		$wheres = $wheres." , 친구소개";
+  }
+  if($where2) {
+    if($wheres=="")	$wheres = "검색엔진";
+    else 		$wheres = $wheres." , 검색엔진";
+  }
+  if($where3) {
+    if($wheres=="")	$wheres = "신문광고";
+  	else 		$wheres = $wheres." , 신문광고";
+  }
+  if($where4) {
+    if($wheres=="")	$wheres = "커뮤니티 사이트 ";
+    else 		$wheres = $wheres." , 커뮤니티 사이트 ";
+  }
+  if($where5) {
+    if($wheres=="")	$wheres = "기타";
+  	else 		$wheres = $wheres." , 기타";
   }
 
+  // 관심분야  $interests_array = Array("C++","Java","Python","Linux", "없음");
+  if($interest0) {
+  	if($interests=="")	$interests = "C++";
+  	else 		$interests = $interests." , C++";
+  }
+  if($interest1) {
+    if($interests=="")	$interests = "Java";
+  	else 		$interests = $interests." , Java";
+  }
+  if($interest2) {
+    if($interests=="")	$interests = "Python";
+  	else 		$interests = $interests." , Python";
+  }
+  if($interest3) {
+    if($interests=="")	$interests = "Linux";
+  	else 		$interests = $interests." , Linux";
+  }
+  if($interest4) {
+    if($interests=="")	$interests = "없음";
+  	else 		$interests = $interests." , 없음";
+  }
 
-?>
+  ?>
+
 
 
 <html>
@@ -68,6 +109,12 @@
 			<tr>
 				<th height="50px">비밀번호</th>
 				<td><?php echo $pw1?></td>
+			</tr>
+
+      <!-- 비밀번호 힌트 값 확인 -->
+      <tr>
+				<th height="50px">비밀번호 질문&답변</th>
+				<td><?php echo "질문 : ".$pwhint_array[$pwhint]."<br>답변 : ".$pwhintans?></td>
 			</tr>
 
 			<!-- 이름 값 확인 -->
@@ -95,6 +142,12 @@
 				</td>
 			</tr>
 
+      <!-- 통신사  -->
+      <tr>
+        <th height="50px">통신사</th>
+        <td><?php echo $photype ?></td>
+      </tr>
+
 			<!-- 핸드폰 번호  -->
 			<tr>
 				<th height="50px">핸드폰번호</th>
@@ -121,6 +174,11 @@
 				<td><?php echo $wheres ?></td>
 			</tr>
 
+      <!-- 관심분야  -->
+      <tr>
+        <th height="50px">관심분야</th>
+        <td><?php echo $interests ?></td>
+      </tr>
 
 			<!-- 이메일 -->
 			<tr>
